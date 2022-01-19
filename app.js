@@ -6,7 +6,7 @@ admin.initializeApp({
     credential: admin.credential.cert(serviceAccount)
 });
 
-var token = ['Copypaste the device token here']
+var token = ['Copy the device token here used in flutter']
 var payload = {
     notification: {
         title: "DocBot notification",
@@ -15,7 +15,7 @@ var payload = {
 }
 var options =
 {
-    timeToLive: 60 * 60
+    timeToLive: 60 * 60 * 24
 }
 admin.messaging().sendToDevice(token, payload, options)
     .then(function (response) {
